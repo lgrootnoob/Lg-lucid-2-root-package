@@ -117,7 +117,7 @@ adb shell "su -c busybox rm -rf /data/local/tmp/*"
 adb shell "su -c busybox chmod 755 /system/xbin/su"
 adb shell "su -c busybox chmod 755 /system/bin/su"
 cd %cddir%
-apkin Superuser.apk
+call apkin Superuser.apk
 adb reboot
 adb wait-for-device
 echo If you had any issues or saw error messages please screenshot them and put them in the forum.
