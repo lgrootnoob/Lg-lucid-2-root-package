@@ -48,14 +48,16 @@ echo [*] Modified by lgrootnoob from XDA Devs forum, 2014
 pause
 echo.
 echo [*] Waiting for device...
+echo Make sure you installed the driver "THISFIRST.exe"
+echo And make sure usb debugging is ticked in developer options.
 adb wait-for-device
 echo.
 echo _______________________________________________
 echo Rooting Procedure
 echo Do not install Supersu and make sure to launch framaroot.
 cd %cddir%
-call apkin Framaroot-1.8.0.apk
-call back
+call root 3
+call work
 echo PLEASE SELECT GANDALF EXPLOIT ON SCREEN BEFORE CONTINUING
 pause
 echo Rebooting, please wait.
