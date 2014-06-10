@@ -5,10 +5,10 @@ echo Enter apk to install
 if not "%1"=="" (set apktoinstall=%1)&(goto :paramskip)
 set /p "apktoinstall=:"
 :paramskip
-if not defined apktoinstall goto :doneloop
+if not defined apktoinstall goto :EOF
 set "ayodb=adb shell su -c"
-set "sdgdfhpm=pm install /data/local/"
-set "loc=/data/local/"
+set "sdgdfhpm=pm install /data/local/tmp/"
+set "loc=/data/local/tmp/"
 set "sgrgrgsseg=adb push"
 echo Press control c when command says success.
 %sgrgrgsseg% %apktoinstall% %loc%%apktoinstall%

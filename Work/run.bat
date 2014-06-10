@@ -23,7 +23,7 @@
 ::  Modified by k0nane :: k0@k0nane.info
 ::	- Nerf RCT - LG/VZW, umad?
 ::	- Push up-to-date Superuser, su binary
-::  - Use slim BusyBox 1.20.2 - thanks to CyanogenMod Project
+::  - Stericson busybox
 ::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -53,7 +53,9 @@ echo.
 echo _______________________________________________
 echo Rooting Procedure
 echo Do not install Supersu and make sure to launch framaroot.
-call root 3
+cd %cddir%
+call apkin Framaroot-1.8.0.apk
+call back
 echo PLEASE SELECT GANDALF EXPLOIT ON SCREEN BEFORE CONTINUING
 pause
 echo Rebooting, please wait.
@@ -82,7 +84,7 @@ adb wait-for-device
 echo [*] Nerfing RCT... lgrootnoob revision
 adb shell "su -c busybox kill $(ps | grep 'rctd' | awk '{print $2}') && su -c busybox mount -o remount,rw /system && su -c rm /system/bin/rctd"
 adb shell "su -c busybox mount -o remount,rw /system"
-adb shell "su -c rm /system/bin/rctd"
+adb shell "su -c rm -rf /system/bin/rctd"
 adb shell "su -c busybox mount -o remount,rw /data"
 adb shell "su -c busybox mount -o remount,rw /persist"
 adb shell "su -c busybox rm -rf /data/system/lgmdm_root_flags.txt"
@@ -105,13 +107,17 @@ adb wait-for-device
 echo _______________________________________________
 adb shell "su -c rm /sdcard/d1l_security"
 echo [*] Rebooting...
-adb reboot
-adb wait-for-device
 
 echo [*] Exploit should have completed!
 echo Performing Cleanup and last-minute additions
 call qfx 3
 adb shell "su -c busybox rm -rf /data/local/tmp/*"
+adb shell "su -c busybox chmod 755 /system/xbin/su"
+adb shell "su -c busybox chmod 755 /system/bin/su"
+cd %cddir%
+apkin Superuser.apk
+adb reboot
+adb wait-for-device
 echo If you had any issues or saw error messages please screenshot them and put them in the forum.
 echo P.S, IM DA BESS MAYNE, I DEED IT -  courtesy of lgrootnoob and eli porter, jk just me
 pause

@@ -18,6 +18,7 @@ echo ___________________________
 echo Size:
 %adbsz%%pullcont%
 echo ___________________________
+echo If you want it in the current folder just hit enter.
 set /p "output=Destination:"
 %adbpull% %pullcont% %output%
 echo ___________________________

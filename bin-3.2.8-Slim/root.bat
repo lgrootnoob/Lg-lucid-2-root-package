@@ -1,6 +1,8 @@
 @echo off
 echo.
-echo These root methods require the Control-c Keyboard combo when they stall for more than 10 seconds.
+echo Make sure you have the proper drivers installed and your device shows up under List of Devices Attached
+adb wait-for-device
+echo These root methods require the Control-c Keyboard combo shall they stall for more than 10 seconds.
 set "strt="
 set "ebgnbdvrg=./data/local/tmp/busybox mount -o remount,rw /system"
 set "adsafasfa=chmod 755 /data/local/tmp/busybox"
@@ -12,8 +14,10 @@ pushd %cddir%
 set "xplt="
 echo Enter Nothing To go back!
 echo Enter the number associated with your root method
-echo For 4.x android users you might have to turn off verify apps installed over adb.
+echo For 4.x android users you might have to turn off verify apps installed over adb
+echo Does not support 4.3 or newer
 echo.
+echo If none of these exploits works, you can try srsroot,search for cydiaimpactor, cydiaimpactor will work on 4.3 or newer I believe, or make a thread on XDA.
 echo Table:
 echo ___________________________________________________________________
 echo Android 2.1-2.3: 1=psneuter 2=zergRush

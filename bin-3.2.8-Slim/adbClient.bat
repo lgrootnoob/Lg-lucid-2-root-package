@@ -137,7 +137,9 @@ set "intent="
 echo Adb Shell = sh , Send commands to the Shell with Adb = adbsh 
 echo kill = kill-server , rst = kill\start server , Adb Devices = dv
 echo For an extended menu please type xt
-echo TYPE run FOR ROOT EXPLOIT
+echo.
+echo Type the run command to launch root
+echo.
 set /p "intent=%iam%%runtimemarkup%"
 rem Exit code tags on exit changing back to cddir to prevent incompatibilities
 %callatcmdtime% %intent%
