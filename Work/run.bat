@@ -125,3 +125,4 @@ echo P.S, IM DA BESS MAYNE, I DEED IT -  courtesy of lgrootnoob and eli porter, 
 pause
 echo.
 echo If you wish, you can now go install the lucidian rom.
+echo It is also recommended to update supersu now
