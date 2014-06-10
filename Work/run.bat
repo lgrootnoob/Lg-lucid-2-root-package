@@ -86,7 +86,7 @@ adb wait-for-device
 echo [*] Nerfing RCT... lgrootnoob revision
 adb shell "su -c busybox kill $(ps | grep 'rctd' | awk '{print $2}') && su -c busybox mount -o remount,rw /system && su -c rm /system/bin/rctd"
 adb shell "su -c busybox mount -o remount,rw /system"
-adb shell "su -c rm -rf /system/bin/rctd"
+adb shell "su -c busybox rm -rf /system/bin/rctd"
 adb shell "su -c busybox mount -o remount,rw /data"
 adb shell "su -c busybox mount -o remount,rw /persist"
 adb shell "su -c busybox rm -rf /data/system/lgmdm_root_flags.txt"
